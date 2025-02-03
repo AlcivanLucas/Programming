@@ -1,2 +1,3 @@
 Bibliotecas importantes
 
+g++ <nome do codigo> -o <nome do arquivo depois que compilado>

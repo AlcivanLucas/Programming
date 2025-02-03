@@ -1,0 +1,19 @@
+sudo airmon-ng start wlp3s0
+airodump-ng wlp3s0mon
+airodump-ng -c <num canal> --bssid <bssid>
+airodump-ng -0 1000 -a <bssid> wlp3s0mon
+
+sudo mysql -u root -p -> ACESSA AO mysql pelo terminal 
+
+sudo systemctl status mysql --> verifica de server do mysql esta ativo 
+
+
+# limpa a memoria cache 
+sudo sync
+sudo sysctl -w vm.drop_caches=3
+
+
+https://i12bretro.github.io/tutorials/0190.html configuração no zonominder 
+https://forums.zoneminder.com/viewtopic.php?p=136335&hilit=remote+ip+camera#p136335  configuraçao remota de camera iptz
+
+
