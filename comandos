@@ -16,4 +16,5 @@ sudo sysctl -w vm.drop_caches=3
 https://i12bretro.github.io/tutorials/0190.html configuração no zonominder 
 https://forums.zoneminder.com/viewtopic.php?p=136335&hilit=remote+ip+camera#p136335  configuraçao remota de camera iptz
 
-
+tar -xvzf laragon-6.0.0.tar.gz
+sudo chmod +x /opt/laragon/laragon
