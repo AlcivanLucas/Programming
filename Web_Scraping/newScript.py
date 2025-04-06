@@ -48,4 +48,16 @@ materias[indice].click()
 print("Carregando a matéria selecionada...")
 time.sleep(5)
 
-# A partir daqui você pode extrair quizzes da página aberta
+
+
+
+
+# Coleta todos os quizzes
+quizzes = driver.find_elements(By.CSS_SELECTOR, "li.activity.modtype_quiz .activityname a")
+
+print(f"Foram encontrados {len(quizzes)} quizzes nesta matéria:")
+for i, quiz in enumerate(quizzes):
+    titulo_quiz = quiz.text
+    link_quiz = quiz.get_attribute('href')
+    print(f"[{i}] {titulo_quiz} - {link_quiz}")
+
