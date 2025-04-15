@@ -4,6 +4,10 @@ from webdriver_manager.chrome import ChromeDriverManager
 import time
 from selenium.webdriver.common.by import By
 import getpass
+from dotenv import load_dotenv
+import os
+# Carregando as variáveis de ambiente do arquivo .env
+
 
 # Mantém navegador aberto
 options = webdriver.ChromeOptions()
@@ -15,8 +19,13 @@ driver = webdriver.Chrome(service=service, options=options)
 # Página de login
 driver.get("https://icev.digital/login/index.php")
 
-usuario = getpass.getpass("Digite seu usuário: ")
-senha = getpass.getpass("Digite sua senha: ")
+# usuario = getpass.getpass("Digite seu usuário: ")
+# senha = getpass.getpass("Digite sua senha: ")
+load_dotenv()
+usuario = os.getenv("usuario")
+senha = os.getenv("senha")
+
+time.sleep(5)
 
 # Login
 campo_usuario = driver.find_element(By.ID, "username")
@@ -29,7 +38,7 @@ botao_login.click()
 
 # Aguarda carregamento da página
 print("Aguarde enquanto as matérias são carregadas...")
-time.sleep(5)
+time.sleep(10)
 
 # Coleta todas as matérias
 materias = driver.find_elements(By.CSS_SELECTOR, "div.card.dashboard-card div.data h4.title a")
